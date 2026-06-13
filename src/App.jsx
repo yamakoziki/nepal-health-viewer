@@ -14,8 +14,8 @@ export default function App() {
 
   useEffect(() => {
     Promise.all([
-      fetch('/data/food_data.json').then(r => r.json()),
-      fetch('/data/disease_data.json').then(r => r.json()),
+      fetch(`${import.meta.env.BASE_URL}data/food_data.json`).then(r => r.json()),
+      fetch(`${import.meta.env.BASE_URL}data/disease_data.json`).then(r => r.json()),
     ]).then(([food, disease]) => {
       setFoodData(food)
       setDiseaseData(disease)
